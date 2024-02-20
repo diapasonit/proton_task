@@ -22,13 +22,13 @@ def add_product(db_session, products_ids, product_id, product_name, price):
 
 def add_order(db_session, orders_ids, date, order_id, quantity, product, total_price):
     if not (order_id in orders_ids):
-        order_item = OrderItem(count=quantity, product=product)
+        order_item = OrderItem(quantity=quantity, product=product)
         db_session.add(order_item)
         orders_ids.add(order_id)
         return Order(id=order_id, date=date, items=[order_item], total_price=total_price)
     else:
         order = db_session.query(Order).filter_by(id=order_id).first()
-        order_item = OrderItem(count=quantity, product=product)
+        order_item = OrderItem(quantity=quantity, product=product)
         order.total_price += total_price
         db_session.add(order_item)
         order.items.append(order_item)

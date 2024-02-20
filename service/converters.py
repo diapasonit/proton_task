@@ -23,5 +23,5 @@ def convert_order_details(order: Order):
     item_details = list()
     for item in order.items:
         item_details.append(
-            OrderDetailItemDTO(price=item.product.price, name=item.product.name, quantity=item.count))
+            OrderDetailItemDTO(price=item.product.price, name=item.product.name, quantity=item.quantity))
     return OrderDetailsDTO(items=item_details)

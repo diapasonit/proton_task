@@ -28,7 +28,7 @@ class Order(Base):
 class OrderItem(Base):
     __tablename__ = "order_item"
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-    count: Mapped[int] = mapped_column(Integer)
+    quantity: Mapped[int] = mapped_column(Integer)
     order_id: Mapped[int] = mapped_column(ForeignKey("order.id"))
     product_id: Mapped[int] = mapped_column(ForeignKey("product.id"))
     product: Mapped["Product"] = relationship()
