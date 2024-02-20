@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="script.js"></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        table, th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<!-- Here a loader is created which
+     loads till response comes -->
+<div class="d-flex justify-content-center">
+    <div class="spinner-border"
+         role="status" id="loading">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<h1>Orders</h1>
+<!-- table for showing data -->
+<table id="content">
+    <tr>
+        <th>
+            Orders
+        </th>
+        <th>
+            Order details
+        </th>
+        <th>
+            Follow-up orders
+        </th>
+
+    </tr>
+    <tr>
+        <td>
+            <table id="orders"></table>
+        </td>
+        <td>
+            <table id="details">
+                <tr>
+                    <td>Press details button to see order details</td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table id="orders_followup"></table>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
