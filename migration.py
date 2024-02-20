@@ -7,9 +7,6 @@ from sqlalchemy.orm import Session
 from db.model import *
 
 
-# from db.orm_storage import get_all_orders
-
-
 def add_product(db_session, products_ids, product_id, product_name, price):
     if not (product_id in products_ids):
         product = Product(id=product_id, name=product_name, price=price)
